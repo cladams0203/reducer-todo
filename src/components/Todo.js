@@ -1,12 +1,13 @@
 import React from 'react'
 
 export function Todo (props) {
-
+    console.log(props)
     return(
-        <h2 onClick={(e) => {
+        <h2 
+           className={props.state.completed ? 'change' : ''}
+            onClick={(e) => {
             e.preventDefault()
             props.handleComplete(props.state.id)
-            e.target.classList.toggle('change')
         }}>{props.state.item}</h2>
     )
 }
